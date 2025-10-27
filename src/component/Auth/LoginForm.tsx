@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import CustomButton from "./CustomButton";
 import CustomInput from "./CustomInput";
 import Image from "next/image";
+import SocialButton from "./SocialButton";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -92,39 +93,14 @@ export default function LoginForm() {
               </div>
 
               <div className="mt-6 grid grid-cols-3 gap-3">
-                <button
-                  type="button"
-                  className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-                >
-                  <Image
-                    src="img/icons/facebook.svg"
-                    alt="facebook"
-                    height={14}
-                    width={14}
+                {SOCIAL_PROVIDERS.map((provider) => (
+                  <SocialButton
+                    key={provider.name}
+                    provider={provider.name}
+                    icon={provider.icon}
+                    onClick={() => console.log(`Login with ${provider.name}`)}
                   />
-                </button>
-                <button
-                  type="button"
-                  className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-                >
-                  <Image
-                    src="img/icons/google.svg"
-                    alt="google"
-                    height={14}
-                    width={14}
-                  />
-                </button>
-                <button
-                  type="button"
-                  className="flex items-center justify-center px-4 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
-                >
-                  <Image
-                    src="img/icons/apple.svg"
-                    alt="apple"
-                    height={14}
-                    width={14}
-                  />
-                </button>
+                ))}
               </div>
             </div>
           </div>
@@ -137,3 +113,9 @@ export default function LoginForm() {
     </div>
   );
 }
+
+const SOCIAL_PROVIDERS = [
+  { name: "facebook", icon: "img/icons/facebook.svg" },
+  { name: "google", icon: "img/icons/google.svg" },
+  { name: "apple", icon: "img/icons/apple.svg" },
+];
