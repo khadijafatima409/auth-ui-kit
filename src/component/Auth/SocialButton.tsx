@@ -23,7 +23,13 @@ const SocialButton: React.FC<SocialButtonProps> = ({
       fullWidth
       className="flex items-center justify-center px-4 py-3"
     >
-      <Image src={icon} alt={provider} height={16} width={16} />
+      <Image
+        src={icon}
+        alt={provider}
+        height={26}
+        width={26}
+        className="h-6 w-6"
+      />
     </CustomButton>
   );
 };

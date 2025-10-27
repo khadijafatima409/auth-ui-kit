@@ -19,13 +19,13 @@ export default function LoginForm() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-white p-4 w-full">
-      <div className="w-full max-w-7xl bg-white rounded-3xl shadow-2xl overflow-hidden px-6 pt-5 pb-10 ">
-        <div className="flex items-center gap-2 mb-2">
+      <div className="w-full max-w-7xl bg-white rounded-3xl shadow-2xl overflow-hidden  pt-5 pb-6 md:pb-12">
+        <div className="flex items-center gap-2 mb-2 p-6 md:px-12 ">
           <Image src="img/logo.svg" alt="xlogo" height={16} width={12} />
           <span className="text-xl font-semibold text-gray-800">Your Logo</span>
         </div>
-        <div className="flex pr-10 ">
-          <div className="w-full lg:w-1/2 p-12">
+        <div className="flex pr-2 md:pr-10 ">
+          <div className="w-full lg:w-1/2 p-6 md:p-12 ">
             <div className="mb-8">
               <h1 className="text-3xl font-bold text-gray-900 mb-2">Login</h1>
               <p className="text-gray-600 text-sm">
@@ -39,7 +39,6 @@ export default function LoginForm() {
                 type="email"
                 placeholder="Enter your email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 required
               />
 
@@ -48,12 +47,11 @@ export default function LoginForm() {
                 type="password"
                 placeholder="Enter your password"
                 value={password}
-                onChange={(e) => setPassword(e.target.value)}
                 required
                 showPasswordToggle
               />
 
-              <div className="flex items-center justify-between text-sm">
+              <div className="flex items-center justify-between text-xs md:text-sm">
                 <label className="flex items-center gap-2 cursor-pointer">
                   <input
                     type="checkbox"
@@ -98,7 +96,6 @@ export default function LoginForm() {
                     key={provider.name}
                     provider={provider.name}
                     icon={provider.icon}
-                    onClick={() => console.log(`Login with ${provider.name}`)}
                   />
                 ))}
               </div>
@@ -106,7 +103,13 @@ export default function LoginForm() {
           </div>
 
           <div className="hidden lg:flex lg:w-1/2 rounded-3xl items-center justify-center relative">
-            <Image src="img/login.svg" alt="apple" height={316} width={459} />
+            <Image
+              src="img/login.svg"
+              alt="apple"
+              height={316}
+              width={459}
+              className=" "
+            />
           </div>
         </div>
       </div>
