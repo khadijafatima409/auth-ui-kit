@@ -10,11 +10,7 @@ interface SocialButtonProps {
   onClick?: () => void;
 }
 
-const SocialButton: React.FC<SocialButtonProps> = ({
-  provider,
-  icon,
-  onClick,
-}) => {
+const SocialButton = ({ provider, icon, onClick }: SocialButtonProps) => {
   return (
     <CustomButton
       type="button"
