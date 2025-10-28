@@ -8,6 +8,7 @@ import Image from "next/image";
 import SocialButton from "./SocialButton";
 import { SOCIAL_PROVIDERS } from "@/data/social";
 import AuthCard from "./AuthCard";
+import AuthDivider from "./AuthDivder";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -22,11 +23,9 @@ export default function LoginForm() {
     <AuthCard logoAlign="left">
       <div className="flex pr-2 md:pr-10 ">
         <div className="w-full lg:w-1/2 p-6 md:p-12 ">
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Login</h1>
-            <p className="text-gray-600 text-sm">
-              Login to access your travelwise account
-            </p>
+          <div className="mb-8 text-dark-gray">
+            <h1 className="text-3xl font-bold  mb-2">Login</h1>
+            <p className=" text-sm">Login to access your travelwise account</p>
           </div>
 
           <form className="space-y-5">
@@ -76,16 +75,7 @@ export default function LoginForm() {
           </div>
 
           <div className="mt-8">
-            <div className="relative">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300"></div>
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-white text-gray-500">
-                  Or login with
-                </span>
-              </div>
-            </div>
+            <AuthDivider text="Or login with" />
 
             <div className="mt-6 grid grid-cols-3 gap-3">
               {SOCIAL_PROVIDERS.map((provider) => (
