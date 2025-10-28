@@ -6,6 +6,7 @@ import CustomButton from "./CustomButton";
 import CustomInput from "./CustomInput";
 import Image from "next/image";
 import SocialButton from "./SocialButton";
+import { SOCIAL_PROVIDERS } from "@/data/social";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -35,7 +36,7 @@ export default function LoginForm() {
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <CustomInput
-                label="Email/Username"
+                label="Email"
                 type="email"
                 placeholder="Enter your email"
                 value={email}
@@ -56,7 +57,7 @@ export default function LoginForm() {
                   <input
                     type="checkbox"
                     checked={rememberMe}
-                    onChange={(e) => setRememberMe(e.target.checked)}
+                    // onChange={(e) => setRememberMe(e.target.checked)}
                     className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                   />
                   <span className="text-gray-700">Remember me</span>
@@ -73,7 +74,7 @@ export default function LoginForm() {
 
             <div className="mt-6 text-center text-sm text-gray-600">
               Don&apos;t have an account?{" "}
-              <a href="#" className="text-coral-pink font-medium">
+              <a href="/signup" className="text-coral-pink font-medium">
                 Sign up
               </a>
             </div>
@@ -103,22 +104,10 @@ export default function LoginForm() {
           </div>
 
           <div className="hidden lg:flex lg:w-1/2 rounded-3xl items-center justify-center relative">
-            <Image
-              src="img/login.svg"
-              alt="apple"
-              height={316}
-              width={459}
-              className=" "
-            />
+            <Image src="img/login.svg" alt="apple" height={316} width={459} />
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-const SOCIAL_PROVIDERS = [
-  { name: "facebook", icon: "img/icons/facebook.svg" },
-  { name: "google", icon: "img/icons/google.svg" },
-  { name: "apple", icon: "img/icons/apple.svg" },
-];

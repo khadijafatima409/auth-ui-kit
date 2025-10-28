@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 
 interface CustomInputProps {
-  label: string;
+  label?: string;
   type?: string;
   placeholder?: string;
   value?: string;
@@ -25,15 +25,19 @@ export default function CustomInput({
 
   return (
     <div className={`w-full ${className}`}>
-      <label className="block text-sm font-medium  mb-2">{label}</label>
       <div className="relative">
-        <input
-          type={inputType}
-          placeholder={placeholder}
-          value={value}
-          required={required}
-          className="w-full px-2 py-1.5 md:px-4 md:py-3 border border-gray-300 rounded-xs outline-none"
-        />
+        <div className="px-4 py-2 border-2 border-old-lavender rounded relative">
+          <label className="absolute -my-5 -mx-2 bg-white px-2 text-charcol text-sm">
+            {label}
+          </label>
+          <input
+            type={inputType}
+            className="appearance-none border-2 border-white rounded w-full py-1 text-charcol leading-tight focus:outline-none focus:bg-white focus:border-white"
+            placeholder={placeholder}
+            value={value}
+            required={required}
+          />
+        </div>
         {showPasswordToggle && (
           <button
             type="button"
