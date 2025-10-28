@@ -32,7 +32,7 @@ export default function CustomInput({
           </label>
           <input
             type={inputType}
-            className="appearance-none border-2 border-white rounded w-full py-1 text-charcol leading-tight focus:outline-none focus:bg-white focus:border-white"
+            className="appearance-none placeholder:text-sm text-sm rounded w-full py-1 text-charcol leading-tight focus:outline-none focus:bg-white focus:border-white"
             placeholder={placeholder}
             value={value}
             required={required}

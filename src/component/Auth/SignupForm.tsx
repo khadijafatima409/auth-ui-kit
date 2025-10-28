@@ -8,20 +8,20 @@ import { SOCIAL_PROVIDERS } from "@/data/social";
 
 const SignupForm = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white p-4 w-full ">
-      <div className="w-full max-w-7xl bg-white rounded-3xl shadow-2xl overflow-hidden py-3 px-7 ">
-        <div className="flex items-center justify-end">
+    <div className="min-h-screen flex items-center justify-center bg-white p-10 w-full ">
+      <div className="w-full  bg-white rounded-3xl shadow-2xl overflow-hidden py-3 md:py-9 px-14 ">
+        <div className="flex items-center justify-end mx-14!">
           <Image src={"img/logo.svg"} alt="" height={16} width={16} />
           <h1 className="text-lg pl-1 font-bold leading-1.5">Your Logo</h1>
         </div>
 
-        <div className="flex ">
+        <div className="flex gap-12 ">
           <div className="hidden lg:flex lg:w-1/2 rounded-3xl items-center justify-center relative">
             <Image
               src={"img/signup.svg"}
               alt="signup"
               height={233}
-              width={339}
+              width={439}
             />
           </div>
           <div className="flex flex-col gap-6">
@@ -96,13 +96,13 @@ const SignupForm = () => {
                     fullWidth
                     variant="primary"
                     type="submit"
-                    className="rounded-sm"
+                    className="rounded-sm my-3! "
                   >
                     Create Account
                   </CustomButton>
                   <span>
                     Already have an account?
-                    <a href="" className="text-coral-pink">
+                    <a href="/login" className="text-coral-pink">
                       Login
                     </a>
                   </span>
@@ -115,7 +115,7 @@ const SignupForm = () => {
                     </div>
                     <div className="relative flex justify-center text-sm">
                       <span className="px-4 bg-white text-gray-500">
-                        Or login with
+                        Or signup with
                       </span>
                     </div>
                   </div>
