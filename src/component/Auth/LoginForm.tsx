@@ -14,10 +14,6 @@ export default function LoginForm() {
     <AuthCard logoAlign="left">
       <div className="flex pr-2 md:pr-10 ">
         <div className="w-full lg:w-1/2 p-6 md:p-12 ">
-          {/* <div className="mb-8 text-dark-gray">
-            <h1 className="text-3xl font-bold mb-2">Login</h1>
-            <p className=" text-sm">Login to access your travelwise account</p>
-          </div> */}
           <AuthHeader
             title="Login"
             subtitle="Login to access your travelwise account"
@@ -29,7 +25,6 @@ export default function LoginForm() {
               label="Email"
               type="email"
               placeholder="Enter your email"
-              // value={email}
               required
             />
 
@@ -37,7 +32,6 @@ export default function LoginForm() {
               label="Password"
               type="password"
               placeholder="Enter your password"
-              // value={password}
               required
               showPasswordToggle
             />

@@ -6,7 +6,6 @@ interface CustomInputProps {
   label?: string;
   type?: string;
   placeholder?: string;
-  // value?: string;
   required?: boolean;
   className?: string;
   showPasswordToggle?: boolean;
@@ -16,7 +15,6 @@ export default function CustomInput({
   label,
   type = "text",
   placeholder,
-  // value,
   required = false,
   className = "",
   showPasswordToggle = false,
@@ -35,7 +33,6 @@ export default function CustomInput({
             type={inputType}
             className="appearance-none placeholder:text-sm text-sm rounded w-full py-1 text-charcol leading-tight focus:outline-none focus:bg-white focus:border-white"
             placeholder={placeholder}
-            // value={value}
             required={required}
           />
         </div>

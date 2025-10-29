@@ -19,12 +19,6 @@ const SignupForm = () => {
           <Image src={"img/signup.svg"} alt="signup" height={233} width={439} />
         </div>
         <div className="flex flex-col gap-6">
-          {/* <div className="flex flex-col gap-1 pt-8 text-dark-gray">
-            <h1 className="text-3xl font-semibold  mb-2">Sign up</h1>
-            <p className=" text-sm">
-              Let’s get you all st up so you can access your personal account.
-            </p>
-          </div> */}
           <AuthHeader
             title="Sign up"
             subtitle="  Let’s get you all st up so you can access your personal account."
