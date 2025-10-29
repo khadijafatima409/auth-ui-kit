@@ -1,9 +1,12 @@
+"use client";
 import React from "react";
 import AuthCard from "./AuthCard";
 import Image from "next/image";
 import CustomButton from "./CustomButton";
+import { useRouter } from "next/navigation";
 
 const VerifyCode = () => {
+  const router = useRouter();
   return (
     <AuthCard logoAlign="left">
       <div className="flex">
@@ -47,7 +50,13 @@ const VerifyCode = () => {
                   </a>
                 </span>
               </div>
-              <CustomButton>Verify</CustomButton>
+              <CustomButton
+                onClick={async () => {
+                  await router.push("/set-password");
+                }}
+              >
+                Verify
+              </CustomButton>
             </div>
           </div>
         </div>

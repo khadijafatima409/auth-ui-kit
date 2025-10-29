@@ -11,14 +11,6 @@ import AuthCard from "./AuthCard";
 import AuthDivider from "./AuthDivder";
 
 export default function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   console.log("Login submitted:", { email, password });
-  // };
-
   return (
     <AuthCard logoAlign="left">
       <div className="flex pr-2 md:pr-10 ">
@@ -33,7 +25,7 @@ export default function LoginForm() {
               label="Email"
               type="email"
               placeholder="Enter your email"
-              value={email}
+              // value={email}
               required
             />
 
@@ -41,7 +33,7 @@ export default function LoginForm() {
               label="Password"
               type="password"
               placeholder="Enter your password"
-              value={password}
+              // value={password}
               required
               showPasswordToggle
             />
