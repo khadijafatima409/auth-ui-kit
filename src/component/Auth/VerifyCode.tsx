@@ -5,6 +5,7 @@ import Image from "next/image";
 import CustomButton from "./CustomButton";
 import { useRouter } from "next/navigation";
 import BackToLogin from "./BackToLogin";
+import AuthHeader from "./AuthHeader";
 
 const VerifyCode = () => {
   const router = useRouter();
@@ -16,12 +17,16 @@ const VerifyCode = () => {
             <div className="flex flex-col gap-4">
               <BackToLogin />
 
-              <div className="flex flex-col gap-2 text-dark-gray">
+              {/* <div className="flex flex-col gap-2 text-dark-gray">
                 <h1 className="text-3xl font-bold  mb-2">Verify code</h1>
                 <p className=" text-sm">
                   An authentication code has been sent to your email.
                 </p>
-              </div>
+              </div> */}
+              <AuthHeader
+                title="Verify code"
+                subtitle="An authentication code has been sent to your email."
+              />
             </div>
             <div className=" flex flex-col gap-8">
               <div className="flex flex-col gap-3">

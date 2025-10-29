@@ -7,16 +7,22 @@ import SocialButton from "./SocialButton";
 import { SOCIAL_PROVIDERS } from "@/data/social";
 import AuthCard from "./AuthCard";
 import AuthDivider from "./AuthDivder";
+import AuthHeader from "./AuthHeader";
 
 export default function LoginForm() {
   return (
     <AuthCard logoAlign="left">
       <div className="flex pr-2 md:pr-10 ">
         <div className="w-full lg:w-1/2 p-6 md:p-12 ">
-          <div className="mb-8 text-dark-gray">
+          {/* <div className="mb-8 text-dark-gray">
             <h1 className="text-3xl font-bold mb-2">Login</h1>
             <p className=" text-sm">Login to access your travelwise account</p>
-          </div>
+          </div> */}
+          <AuthHeader
+            title="Login"
+            subtitle="Login to access your travelwise account"
+            className="mb-8"
+          />
 
           <form className="space-y-5">
             <CustomInput

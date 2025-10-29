@@ -2,19 +2,19 @@ import AuthCard from "./AuthCard";
 import Image from "next/image";
 import CustomInput from "./CustomInput";
 import CustomButton from "./CustomButton";
+import AuthHeader from "./AuthHeader";
 
 const SetPassword = () => {
   return (
     <AuthCard>
       <div className="flex pr-2 md:pr-10 ">
         <div className="w-full lg:w-1/2 p-6 md:p-12 ">
-          <div className="mb-8 text-dark-gray">
-            <h1 className="text-3xl font-bold mb-2">Set a password</h1>
-            <p className=" text-sm">
-              Your previous password has been reseted. Please set a new password
-              for your account.
-            </p>
-          </div>
+          <AuthHeader
+            title="Set a password"
+            subtitle="Your previous password has been reseted. Please set a new password
+              for your account."
+            className="mb-8"
+          />
 
           <form className="flex flex-col gap-8">
             <div className="space-y-5">

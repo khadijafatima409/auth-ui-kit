@@ -9,6 +9,7 @@ import SocialButton from "./SocialButton";
 import { SOCIAL_PROVIDERS } from "@/data/social";
 import AuthDivider from "./AuthDivder";
 import BackToLogin from "./BackToLogin";
+import AuthHeader from "./AuthHeader";
 
 const ForgotPassword = () => {
   return (
@@ -19,7 +20,7 @@ const ForgotPassword = () => {
             <div className="flex flex-col gap-2">
               <BackToLogin />
 
-              <div className="flex flex-col gap-2 text-dark-gray">
+              {/* <div className="flex flex-col gap-2 text-dark-gray">
                 <h1 className="text-3xl font-bold  mb-2">
                   Forgot your password?
                 </h1>
@@ -27,7 +28,11 @@ const ForgotPassword = () => {
                   Don’t worry, happens to all of us. Enter your email below to
                   recover your password
                 </p>
-              </div>
+              </div> */}
+              <AuthHeader
+                title="Forgot your password?"
+                subtitle="Don’t worry, happens to all of us. Enter your email below to recover your password"
+              />
             </div>
             <div className="flex flex-col gap-8">
               <CustomInput

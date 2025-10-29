@@ -8,6 +8,7 @@ import { SOCIAL_PROVIDERS } from "@/data/social";
 import AuthCard from "./AuthCard";
 import AuthDivider from "./AuthDivder";
 import { useRouter } from "next/navigation";
+import AuthHeader from "./AuthHeader";
 
 const SignupForm = () => {
   const router = useRouter();
@@ -18,12 +19,16 @@ const SignupForm = () => {
           <Image src={"img/signup.svg"} alt="signup" height={233} width={439} />
         </div>
         <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-1 pt-8 text-dark-gray">
+          {/* <div className="flex flex-col gap-1 pt-8 text-dark-gray">
             <h1 className="text-3xl font-semibold  mb-2">Sign up</h1>
             <p className=" text-sm">
               Let’s get you all st up so you can access your personal account.
             </p>
-          </div>
+          </div> */}
+          <AuthHeader
+            title="Sign up"
+            subtitle="  Let’s get you all st up so you can access your personal account."
+          />
 
           <form className="">
             <div className="flex flex-col gap-3">
