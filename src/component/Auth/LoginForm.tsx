@@ -1,7 +1,5 @@
 "use client";
 
-import React, { useState } from "react";
-
 import CustomButton from "./CustomButton";
 import CustomInput from "./CustomInput";
 import Image from "next/image";

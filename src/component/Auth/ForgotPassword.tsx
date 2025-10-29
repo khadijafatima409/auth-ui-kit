@@ -8,6 +8,7 @@ import CustomButton from "./CustomButton";
 import SocialButton from "./SocialButton";
 import { SOCIAL_PROVIDERS } from "@/data/social";
 import AuthDivider from "./AuthDivder";
+import BackToLogin from "./BackToLogin";
 
 const ForgotPassword = () => {
   return (
@@ -16,17 +17,8 @@ const ForgotPassword = () => {
         <div className="w-full lg:w-1/2 p-6 md:p-12 ">
           <div className="flex flex-col gap-10">
             <div className="flex flex-col gap-2">
-              <a href="/login">
-                <div className="flex gap-2 text-lg">
-                  <Image
-                    src={"img/icons/left-arrow.svg"}
-                    alt=""
-                    height={10}
-                    width={10}
-                  />
-                  <h2>Back to login</h2>
-                </div>
-              </a>
+              <BackToLogin />
+
               <div className="flex flex-col gap-2 text-dark-gray">
                 <h1 className="text-3xl font-bold  mb-2">
                   Forgot your password?
