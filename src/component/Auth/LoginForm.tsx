@@ -24,7 +24,7 @@ export default function LoginForm() {
       <div className="flex pr-2 md:pr-10 ">
         <div className="w-full lg:w-1/2 p-6 md:p-12 ">
           <div className="mb-8 text-dark-gray">
-            <h1 className="text-3xl font-bold  mb-2">Login</h1>
+            <h1 className="text-3xl font-bold mb-2">Login</h1>
             <p className=" text-sm">Login to access your travelwise account</p>
           </div>
 

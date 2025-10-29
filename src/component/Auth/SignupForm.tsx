@@ -7,8 +7,10 @@ import SocialButton from "./SocialButton";
 import { SOCIAL_PROVIDERS } from "@/data/social";
 import AuthCard from "./AuthCard";
 import AuthDivider from "./AuthDivder";
+import { useRouter } from "next/navigation";
 
 const SignupForm = () => {
+  const router = useRouter();
   return (
     <AuthCard logoAlign="right">
       <div className="flex gap-12 ">
@@ -82,15 +84,19 @@ const SignupForm = () => {
                   </span>
                 </label>
               </div>
-              <div className=" flex flex-col items-center justify-center gap-1">
+              <div>
                 <CustomButton
                   fullWidth
                   variant="primary"
-                  type="submit"
                   className="rounded-sm my-3! "
+                  onClick={async () => {
+                    console.log("Button clicked before navigation");
+                    await router.push("/verify-code"); // then navigate
+                  }}
                 >
                   Create Account
                 </CustomButton>
+
                 <span>
                   Already have an account?
                   <a href="/login" className="text-coral-pink">
