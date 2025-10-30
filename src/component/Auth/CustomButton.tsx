@@ -21,7 +21,7 @@ export default function CustomButton({
   className = "",
 }: CustomButtonProps) {
   const baseStyles =
-    "px-6 py-3 rounded font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer";
+    "px-3 py-3 rounded font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 cursor-pointer";
 
   const variantStyles = {
     primary: "bg-primary-blue text-white hover:bg-blue-700 focus:ring-blue-500",

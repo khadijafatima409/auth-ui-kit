@@ -17,7 +17,7 @@ const SocialButton = ({ provider, icon, onClick }: SocialButtonProps) => {
       variant="outline"
       onClick={onClick}
       fullWidth
-      className="flex items-center justify-center px-4 py-3"
+      className="flex items-center justify-center"
     >
       <Image
         src={icon}

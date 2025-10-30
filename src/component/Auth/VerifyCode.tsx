@@ -24,13 +24,13 @@ const VerifyCode = () => {
             </div>
             <div className=" flex flex-col gap-8">
               <div className="flex flex-col gap-3">
-                <div className="flex gap-8 flex-wrap">
+                <div className="flex gap-2 md:gap-4 justify-center ">
                   {[...Array(6)].map((_, i) => (
                     <input
                       key={i}
                       type="string"
                       placeholder=""
-                      className="w-12 h-12 text-center border rounded "
+                      className=" w-6 h-6 lg:w-10 lg:h-10 xl:w-12 xl:md:h-12 text-center border rounded "
                     />
                   ))}
                 </div>

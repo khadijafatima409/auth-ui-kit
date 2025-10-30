@@ -14,9 +14,9 @@ const AuthCard = ({
   className = "",
 }: AuthCardProps) => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white p-10 w-full">
+    <div className="min-h-screen flex items-center justify-center bg-white p-8 md:p-10 w-full">
       <div
-        className={`w-full bg-white rounded-3xl shadow-2xl overflow-hidden py-3 md:py-9 px-14 ${className}`}
+        className={`w-full bg-white rounded-3xl shadow-2xl overflow-hidden py-3 md:py-9 px-3 sm:px-5 md:px-14 ${className}`}
       >
         <LogoHeader align={logoAlign} />
         {children}

@@ -15,19 +15,19 @@ const SignupForm = () => {
   return (
     <AuthCard logoAlign="right">
       <div className="flex gap-12 ">
-        <div className="hidden lg:flex lg:w-1/2 rounded-3xl items-center justify-center relative">
+        <div className="hidden lg:flex w-full lg:w-1/2 rounded-3xl items-center justify-center relative">
           <Image src={"img/signup.svg"} alt="signup" height={233} width={439} />
         </div>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col mx-auto lg:mx-0 gap-6">
           <AuthHeader
             title="Sign up"
-            subtitle="  Let’s get you all st up so you can access your personal account."
+            subtitle="Let’s get you all st up so you can access your personal account."
           />
 
           <form className="">
             <div className="flex flex-col gap-3">
               <div>
-                <div className="flex gap-2 justify-between pb-5">
+                <div className=" flex flex-col md:flex-row gap-4 md:gap-2 justify-between pb-5">
                   <CustomInput
                     label="First Name"
                     type="text"
@@ -39,7 +39,7 @@ const SignupForm = () => {
                     placeholder="john.doe@gmail.com"
                   />
                 </div>
-                <div className="flex gap-2 justify-between pb-5">
+                <div className="flex flex-col md:flex-row gap-4 md:gap-2 justify-between pb-5">
                   <CustomInput
                     label="Email"
                     type="email"
@@ -99,7 +99,7 @@ const SignupForm = () => {
                 <span>
                   Already have an account?
                   <a href="/login" className="text-coral-pink">
-                    Login
+                    &nbsp; Login &nbsp;
                   </a>
                 </span>
               </div>
