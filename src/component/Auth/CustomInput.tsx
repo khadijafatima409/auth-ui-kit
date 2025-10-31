@@ -9,6 +9,7 @@ interface CustomInputProps {
   required?: boolean;
   className?: string;
   showPasswordToggle?: boolean;
+  onChange?: void;
 }
 
 export default function CustomInput({
@@ -18,6 +19,7 @@ export default function CustomInput({
   required = false,
   className = "",
   showPasswordToggle = false,
+  onChange,
 }: CustomInputProps) {
   const [showPassword, setShowPassword] = useState(false);
   const inputType = showPasswordToggle && showPassword ? "text" : type;
@@ -34,6 +36,7 @@ export default function CustomInput({
             className="appearance-none placeholder:text-sm text-sm rounded w-full py-1 text-charcol leading-tight focus:outline-none focus:bg-white focus:border-white"
             placeholder={placeholder}
             required={required}
+            onChange={onChange}
           />
         </div>
         {showPasswordToggle && (

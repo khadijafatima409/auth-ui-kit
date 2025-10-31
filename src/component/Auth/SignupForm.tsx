@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { FormEventHandler, useState } from "react";
 import CustomInput from "./CustomInput";
 import CustomButton from "./CustomButton";
 import SocialButton from "./SocialButton";
@@ -12,6 +12,18 @@ import AuthHeader from "./AuthHeader";
 
 const SignupForm = () => {
   const router = useRouter();
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    password: "",
+    confirm_password: "",
+  });
+  const handleSubmit = (e: Event) => {
+    console.log("form submitted", formData);
+
+    return;
+  };
   return (
     <AuthCard logoAlign="right">
       <div className="flex gap-12 ">
@@ -24,7 +36,7 @@ const SignupForm = () => {
             subtitle="Let’s get you all st up so you can access your personal account."
           />
 
-          <form className="">
+          <form>
             <div className="flex flex-col gap-3">
               <div>
                 <div className=" flex flex-col md:flex-row gap-4 md:gap-2 justify-between pb-5">
@@ -32,6 +44,9 @@ const SignupForm = () => {
                     label="First Name"
                     type="text"
                     placeholder="john.doe@gmail.com"
+                    onChange={(e: Event) =>
+                      setFormData({ ...formData, first_name: e.target.value })
+                    }
                   />
                   <CustomInput
                     label="Last Name"
@@ -88,10 +103,12 @@ const SignupForm = () => {
                   fullWidth
                   variant="primary"
                   className="rounded-sm my-3! "
-                  onClick={async () => {
-                    console.log("Button clicked before navigation");
-                    await router.push("/verify-code"); // then navigate
-                  }}
+                  // onClick={async () => {
+                  //   console.log("Button clicked before navigation");
+                  //   await router.push("/verify-code"); // then navigate
+                  // }}
+                  type="submit"
+                  onClick={handleSubmit}
                 >
                   Create Account
                 </CustomButton>
