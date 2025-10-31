@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React, { FormEventHandler, useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import CustomInput from "./CustomInput";
 import CustomButton from "./CustomButton";
 import SocialButton from "./SocialButton";
@@ -16,13 +16,23 @@ const SignupForm = () => {
     first_name: "",
     last_name: "",
     email: "",
+    phone_number: "",
     password: "",
     confirm_password: "",
   });
-  const handleSubmit = (e: Event) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     console.log("form submitted", formData);
 
     return;
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => {
+      const updated = { ...prev, [name]: value };
+      console.log("Current values:", updated);
+      return updated;
+    });
   };
   return (
     <AuthCard logoAlign="right">
@@ -36,22 +46,25 @@ const SignupForm = () => {
             subtitle="Let’s get you all st up so you can access your personal account."
           />
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-3">
               <div>
                 <div className=" flex flex-col md:flex-row gap-4 md:gap-2 justify-between pb-5">
                   <CustomInput
                     label="First Name"
                     type="text"
+                    value={formData.first_name}
                     placeholder="john.doe@gmail.com"
-                    onChange={(e: Event) =>
-                      setFormData({ ...formData, first_name: e.target.value })
-                    }
+                    onChange={handleChange}
+                    name="first_name"
                   />
                   <CustomInput
                     label="Last Name"
                     type="text"
+                    value={formData.last_name}
                     placeholder="john.doe@gmail.com"
+                    name="last_name"
+                    onChange={handleChange}
                   />
                 </div>
                 <div className="flex flex-col md:flex-row gap-4 md:gap-2 justify-between pb-5">
@@ -59,11 +72,17 @@ const SignupForm = () => {
                     label="Email"
                     type="email"
                     placeholder="john.doe@gmail.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    name="email"
                   />
                   <CustomInput
                     label="Phone Number"
                     type="Number"
                     placeholder="john.doe@gmail.com"
+                    value={formData.phone_number}
+                    onChange={handleChange}
+                    name="phone_number"
                   />
                 </div>
                 <div className="flex flex-col gap-5">
@@ -72,12 +91,18 @@ const SignupForm = () => {
                     type="password"
                     placeholder="•••••••••••••••••••••••••"
                     showPasswordToggle
+                    onChange={handleChange}
+                    value={formData.password}
+                    name="password"
                   />
                   <CustomInput
                     label="Confirm Password"
                     type="password"
                     placeholder="•••••••••••••••••••••••••"
                     showPasswordToggle
+                    onChange={handleChange}
+                    value={formData.confirm_password}
+                    name="confirm_password"
                   />
                 </div>
 
@@ -108,7 +133,6 @@ const SignupForm = () => {
                   //   await router.push("/verify-code"); // then navigate
                   // }}
                   type="submit"
-                  onClick={handleSubmit}
                 >
                   Create Account
                 </CustomButton>

@@ -5,21 +5,25 @@ import { Eye, EyeOff } from "lucide-react";
 interface CustomInputProps {
   label?: string;
   type?: string;
+  value: string;
   placeholder?: string;
   required?: boolean;
   className?: string;
   showPasswordToggle?: boolean;
-  onChange?: void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  name?: string;
 }
 
 export default function CustomInput({
   label,
   type = "text",
   placeholder,
+  value,
   required = false,
   className = "",
   showPasswordToggle = false,
   onChange,
+  name,
 }: CustomInputProps) {
   const [showPassword, setShowPassword] = useState(false);
   const inputType = showPasswordToggle && showPassword ? "text" : type;
@@ -33,10 +37,12 @@ export default function CustomInput({
           </label>
           <input
             type={inputType}
+            value={value}
             className="appearance-none placeholder:text-sm text-sm rounded w-full py-1 text-charcol leading-tight focus:outline-none focus:bg-white focus:border-white"
             placeholder={placeholder}
             required={required}
             onChange={onChange}
+            name={name}
           />
         </div>
         {showPasswordToggle && (
